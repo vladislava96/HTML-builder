@@ -18,6 +18,7 @@ stdin.on('data', data => {
 
   if (dataStr == "exit") {
     process.exit();
+
   }
 
   fs.appendFile(
@@ -28,6 +29,7 @@ stdin.on('data', data => {
     }
   )
 
-}) 
+})
 
+process.on('SIGINT', () => process.exit());
 process.on('exit', () => stdout.write('Удачи в изучении Node.js!'));
