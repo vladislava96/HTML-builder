@@ -24,9 +24,9 @@ fs.readdir(
       fs.stat(
         `./03-files-in-folder/secret-folder/${fileData.name}`, 
         (err, stats) => {
-          let size = stats.size/100;
+          let size = stats.size;
           extension = extension.replace('.', '');
-          console.log(`${name} - ${extension} - ${size}kb`)
+          console.log(`${name} - ${extension} - ${size} byte`)
         }
       )
     }
